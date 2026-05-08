@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 
-import './styles/grunge.css'
+import './styles/style.css'
 
 // Mantener solo rutas: Home (/), Login (/login), Register (/register)
 export default function App() {
