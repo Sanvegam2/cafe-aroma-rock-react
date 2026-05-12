@@ -5,15 +5,22 @@ export default function RegisterPage() {
   const navigate = useNavigate()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [phone, setCelular] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
 
   function handleSubmit(e) {
     e.preventDefault()
     setError('')
 
-    if (!name.trim() || !email.trim() || !password.trim()) {
-      setError('Completa nombre, email y contraseña.')
+    if (!name.trim() || !email.trim() || !phone.trim() || !password.trim() || !confirmPassword.trim()) {
+      setError('Completa todos los campos.')
+      return
+    }
+
+    if (password !== confirmPassword) {
+      setError('Las contraseñas no coinciden.')
       return
     }
 
@@ -25,9 +32,10 @@ export default function RegisterPage() {
     <div className="page grunge">
       <header className="topbar py-3">
         <div className="container d-flex align-items-center justify-content-between">
-          <div className="brand">☕ Café Aroma Rock</div>
+          <div className="brand"><Link to="/">CAFÉ AROMA ROCK</Link></div>
           <nav className="nav">
             <Link to="/login">Login</Link>
+            <Link to="/contactenos">Contactenos</Link>
           </nav>
         </div>
       </header>
@@ -65,6 +73,17 @@ export default function RegisterPage() {
                 </div>
 
                 <div className="mb-3">
+                  <label className="form-label">Número de Celular</label>
+                  <input 
+                    className="form-control input"
+                    value={phone}
+                    onChange={(e) => setCelular(e.target.value)}
+                    type="text"
+                    placeholder="Tu número de celular"
+                    autoComplete="tel" />
+                </div>
+
+                <div className="mb-3">
                   <label className="form-label">Contraseña</label>
                   <input
                     className="form-control input"
@@ -75,6 +94,19 @@ export default function RegisterPage() {
                     autoComplete="new-password"
                   />
                 </div>
+
+                <div className="mb-3">
+                  <label className="form-label">Confirmar contraseña</label>
+                  <input
+                    className="form-control input"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    type="password"
+                    placeholder="Confirma tu contraseña"
+                    autoComplete="new-password"
+                  />
+                </div>
+
 
                 {error ? <div className="alert alert-danger">{error}</div> : null}
 
@@ -87,6 +119,7 @@ export default function RegisterPage() {
                   <Link to="/login" className="btn-link fw-bold">
                     Inicia sesión
                   </Link>
+                  
                 </div>
               </form>
             </div>
