@@ -6,13 +6,14 @@ export default function HomePage() {
     <div className="page grunge">
       <header className="topbar py-3">
         <div className="container d-flex align-items-center justify-content-between">
-          <div className="brand">☕ Café Aroma Rock</div>
+          <div className="brand"><Link to="/">CAFÉ AROMA ROCK</Link></div>
 
           <nav className="nav">
             <Link to="/login" className="me-2">
-              Login
+              Iniciar sesión
             </Link>
-            <Link to="/register">Register</Link>
+            <Link to="/register">Crear cuenta</Link>
+            <Link to="/contactenos">Contactenos</Link>
           </nav>
         </div>
       </header>
@@ -25,11 +26,10 @@ export default function HomePage() {
               <div className="p-4">
                 <div className="hero-grid">
                   <div>
-                    <div className="kicker mb-3">Grunge vibes + Bootstrap</div>
-                    <h1 className="hero-h1">Bienvenido, rockero.</h1>
+                    {/* <div className="kicker mb-3">Grunge vibes + Bootstrap</div> */}
+                    <h1 className="hero-h1">¡Bienvenidos!</h1>
                     <p className="hero-lead">
-                      Una landing con estilo sucio, oscuro y con acento naranja. Entra para ver login y
-                      registro.
+                      En Café Aroma Rock brindamos un espacio cómodo y tranquilo en el cual puedes disfrutar de una gran selección de cafés y postres Y un excelente ambiente para charlar con amigos o familia
                     </p>
 
                     <div className="hero-actions d-flex gap-3 flex-wrap mt-4">
@@ -44,7 +44,7 @@ export default function HomePage() {
                     <div className="row g-3 mt-4">
                       <div className="col-md-6">
                         <div className="badge-grunge rounded-3 p-3 h-100">
-                          <strong>💀 Estilo:</strong> sucio, oscuro y con acento naranja.
+                          <strong>Estilo:</strong>oscuro y con acento naranja.
                         </div>
                       </div>
                       <div className="col-md-6">

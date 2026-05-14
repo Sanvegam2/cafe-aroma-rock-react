@@ -24,9 +24,11 @@ export default function LoginPage() {
     <div className="page grunge">
       <header className="topbar py-3">
         <div className="container d-flex align-items-center justify-content-between">
-          <div className="brand">☕ Café Aroma Rock</div>
+          <div className="brand"><Link to="/">CAFÉ AROMA ROCK</Link></div>
           <nav className="nav">
             <Link to="/register">Register</Link>
+            <Link to="/contactenos">Contactenos</Link>
+            
           </nav>
         </div>
       </header>

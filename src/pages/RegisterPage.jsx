@@ -3,17 +3,25 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function RegisterPage() {
   const navigate = useNavigate()
-  const [name, setName] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
+  const [phone, setCelular] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
 
   function handleSubmit(e) {
     e.preventDefault()
     setError('')
 
-    if (!name.trim() || !email.trim() || !password.trim()) {
-      setError('Completa nombre, email y contraseña.')
+    if (!firstName.trim() || !lastName.trim() || !email.trim() || !phone.trim() || !password.trim() || !confirmPassword.trim()) {
+      setError('Completa todos los campos.')
+      return
+    }
+
+    if (password !== confirmPassword) {
+      setError('Las contraseñas no coinciden.')
       return
     }
 
@@ -25,9 +33,10 @@ export default function RegisterPage() {
     <div className="page grunge">
       <header className="topbar py-3">
         <div className="container d-flex align-items-center justify-content-between">
-          <div className="brand">☕ Café Aroma Rock</div>
+          <div className="brand"><Link to="/">CAFÉ AROMA ROCK</Link></div>
           <nav className="nav">
             <Link to="/login">Login</Link>
+            <Link to="/contactenos">Contactenos</Link>
           </nav>
         </div>
       </header>
@@ -41,14 +50,26 @@ export default function RegisterPage() {
 
               <form onSubmit={handleSubmit} className="mt-3">
                 <div className="mb-3">
-                  <label className="form-label">Nombre</label>
+                  <label className="form-label">Nombres</label>
                   <input
                     className="form-control input"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                     type="text"
-                    placeholder="Tu nombre"
-                    autoComplete="name"
+                    placeholder="Tus nombres"
+                    autoComplete="firstname"
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label">Apellidos</label>
+                  <input
+                    className="form-control input"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    type="text"
+                    placeholder="Tus apellidos"
+                    autoComplete="lastname"
                   />
                 </div>
 
@@ -65,6 +86,17 @@ export default function RegisterPage() {
                 </div>
 
                 <div className="mb-3">
+                  <label className="form-label">Número de Celular</label>
+                  <input 
+                    className="form-control input"
+                    value={phone}
+                    onChange={(e) => setCelular(e.target.value)}
+                    type="text"
+                    placeholder="Tu número de celular"
+                    autoComplete="tel" />
+                </div>
+
+                <div className="mb-3">
                   <label className="form-label">Contraseña</label>
                   <input
                     className="form-control input"
@@ -75,6 +107,19 @@ export default function RegisterPage() {
                     autoComplete="new-password"
                   />
                 </div>
+
+                <div className="mb-3">
+                  <label className="form-label">Confirmar contraseña</label>
+                  <input
+                    className="form-control input"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    type="password"
+                    placeholder="Confirma tu contraseña"
+                    autoComplete="new-password"
+                  />
+                </div>
+
 
                 {error ? <div className="alert alert-danger">{error}</div> : null}
 
@@ -87,6 +132,7 @@ export default function RegisterPage() {
                   <Link to="/login" className="btn-link fw-bold">
                     Inicia sesión
                   </Link>
+                  
                 </div>
               </form>
             </div>
