@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function RegisterPage() {
   const navigate = useNavigate()
-  const [name, setName] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setCelular] = useState('')
   const [password, setPassword] = useState('')
@@ -14,7 +15,7 @@ export default function RegisterPage() {
     e.preventDefault()
     setError('')
 
-    if (!name.trim() || !email.trim() || !phone.trim() || !password.trim() || !confirmPassword.trim()) {
+    if (!firstName.trim() || !lastName.trim() || !email.trim() || !phone.trim() || !password.trim() || !confirmPassword.trim()) {
       setError('Completa todos los campos.')
       return
     }
@@ -49,14 +50,26 @@ export default function RegisterPage() {
 
               <form onSubmit={handleSubmit} className="mt-3">
                 <div className="mb-3">
-                  <label className="form-label">Nombre</label>
+                  <label className="form-label">Nombres</label>
                   <input
                     className="form-control input"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                     type="text"
-                    placeholder="Tu nombre"
-                    autoComplete="name"
+                    placeholder="Tus nombres"
+                    autoComplete="firstname"
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label">Apellidos</label>
+                  <input
+                    className="form-control input"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    type="text"
+                    placeholder="Tus apellidos"
+                    autoComplete="lastname"
                   />
                 </div>
 
