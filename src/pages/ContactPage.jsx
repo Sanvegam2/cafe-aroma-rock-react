@@ -45,7 +45,7 @@ export default function ContactPage() {
             <Link to="/register" className="me-3">
               Crear cuenta
             </Link>
-            <Link to="/contactenos">Contactenos</Link>
+            <Link to="/contactenos">Contáctanos</Link>
           </nav>
         </div>
       </header>

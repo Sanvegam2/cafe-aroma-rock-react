@@ -43,20 +43,6 @@ export default function LoginPage() {
     }
   }
 
-
-  // function handleSubmit(e) {
-  //   e.preventDefault()
-  //   setError('')
-
-  //   if (!email.trim() || !password.trim()) {
-  //     setError('Completa email y contraseña.')
-  //     return
-  //   }
-
-  //   // Mock
-  //   navigate('/')
-  // }
-
   return (
     <div className="page grunge">
       <header className="topbar py-3">
@@ -64,7 +50,7 @@ export default function LoginPage() {
           <div className="brand"><Link to="/">CAFÉ AROMA ROCK</Link></div>
           <nav className="nav">
             <Link to="/register">Register</Link>
-            <Link to="/contactenos">Contactenos</Link>
+            <Link to="/contactenos">Contáctanos</Link>
 
           </nav>
         </div>

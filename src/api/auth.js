@@ -6,7 +6,8 @@ const apiCreateUser = "https://backend-cafe-aroma-rock.vercel.app/api/createUser
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(userData)
+            body: JSON.stringify(userData),
+            credentials: 'include'
         });
         if (!response.ok) {
             throw new Error('Error en la solicitud: ' + response.statusText);
@@ -29,7 +30,8 @@ export const login = async (userData) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(userData)
+            body: JSON.stringify(userData),
+            credentials: 'include'
         });
         if (!response.ok) {
             throw new Error('Error en la solicitud: ' + response.statusText);
