@@ -74,7 +74,7 @@ export default function RegisterPage() {
 
           <nav className="nav">
             <Link to="/login">Login</Link>
-            <Link to="/contactenos">Contactenos</Link>
+            <Link to="/contactenos">Contáctanos</Link>
           </nav>
 
         </div>
