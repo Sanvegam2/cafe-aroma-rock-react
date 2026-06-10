@@ -162,7 +162,7 @@ export default function ContactPage() {
                 </h3>
                 <p className="subtitle">Visítanos cuando quieras.</p>
 
-                <div className="map-frame mt-3">
+                <div className="map-frame mt-3 mapa-oscuro">
                     
                   <iframe
                     title="Mapa Cafe Aroma Rock"
@@ -176,10 +176,11 @@ export default function ContactPage() {
 
                 <div className="mt-3">
                   <div className="badge-grunge rounded-3 p-3">
-                    <strong>Horario:</strong> Mar - Sab 3:00p.m. a 22:00 p.m.
+                    <strong>Horario:</strong> Mar - Sab 3:00p.m. a 10:00 p.m.
                     <br />
                     <br />
-                    <strong>Dirección:</strong> Cl. 14 #85c-10, Comuna 17, Cali, Valle del Cauca
+                    <strong>Dirección:</strong> Cl. 14 #85c-10, Comuna 17 Barrio Ingenio <br /> <br /> 
+                    Cali, Valle del Cauca - Colombia
                   </div>
                 </div>
               </div>

@@ -1,24 +1,61 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { loginUser } from '../context/authContext'
+
 
 export default function LoginPage() {
+
   const navigate = useNavigate()
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
+
     e.preventDefault()
+
     setError('')
 
-    if (!email.trim() || !password.trim()) {
+    if (
+      !email.trim() || 
+      !password.trim()
+    ) {
       setError('Completa email y contraseña.')
       return
     }
+    const userData = {
+      email,
+      password
+    }
+    try {
+      console.log('Usuario registrado:', userData)
 
-    // Mock
-    navigate('/')
+      await loginUser(userData)
+
+      navigate('/')
+
+    } catch (err) {
+
+      setError('Error al iniciar sesión')
+
+      console.error(err)
+    }
   }
+
+
+  // function handleSubmit(e) {
+  //   e.preventDefault()
+  //   setError('')
+
+  //   if (!email.trim() || !password.trim()) {
+  //     setError('Completa email y contraseña.')
+  //     return
+  //   }
+
+  //   // Mock
+  //   navigate('/')
+  // }
 
   return (
     <div className="page grunge">
@@ -28,7 +65,7 @@ export default function LoginPage() {
           <nav className="nav">
             <Link to="/register">Register</Link>
             <Link to="/contactenos">Contactenos</Link>
-            
+
           </nav>
         </div>
       </header>
@@ -82,6 +119,8 @@ export default function LoginPage() {
           </div>
         </div>
       </main>
+
+
 
       <footer className="footer text-center">© {new Date().getFullYear()} Café Aroma Rock</footer>
     </div>
