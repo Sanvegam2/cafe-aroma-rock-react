@@ -6,13 +6,14 @@ export default function HomePage() {
     <div className="page grunge">
       <header className="topbar py-3">
         <div className="container d-flex align-items-center justify-content-between">
-          <div className="brand">☕ Café Aroma Rock</div>
+          <div className="brand"><Link to="/">CAFÉ AROMA ROCK</Link></div>
 
           <nav className="nav">
             <Link to="/login" className="me-2">
-              Login
+              Iniciar sesión
             </Link>
-            <Link to="/register">Register</Link>
+            <Link to="/register">Crear cuenta</Link>
+            <Link to="/contactenos">Contáctanos</Link>
           </nav>
         </div>
       </header>
@@ -25,12 +26,12 @@ export default function HomePage() {
               <div className="p-4">
                 <div className="hero-grid">
                   <div>
-                    <div className="kicker mb-3">Grunge vibes + Bootstrap</div>
-                    <h1 className="hero-h1">Bienvenido, rockero.</h1>
-                    <p className="hero-lead">
-                      Una landing con estilo sucio, oscuro y con acento naranja. Entra para ver login y
-                      registro.
-                    </p>
+                    {/* <div className="kicker mb-3">Grunge vibes + Bootstrap</div> */}
+                    <h1 className="hero-h1"><i>Café Aroma Rock</i></h1>
+                    {/* <p className="hero-lead">
+                      En Café Aroma Rock brindamos un espacio cómodo y tranquilo en el cual puedes disfrutar de una gran selección de cafés y postres Y un excelente ambiente para charlar con amigos o familia
+                    </p> */}
+                    <p className="hero-lead">Un espacio donde la buena música se mezcla con el aroma del mejor café. Ven a disfrutar de nuestra selección exclusiva de cafés y postres artesanales en un ambiente relajado, cómodo y tranquilo. El punto de encuentro perfecto para conectar, charlar y compartir grandes momentos con tus amigos o familia. ¡Súbele el volumen a tus sentidos!</p>
 
                     <div className="hero-actions d-flex gap-3 flex-wrap mt-4">
                       <Link to="/register" className="btn btn-grunge px-4 py-2">
@@ -44,7 +45,7 @@ export default function HomePage() {
                     <div className="row g-3 mt-4">
                       <div className="col-md-6">
                         <div className="badge-grunge rounded-3 p-3 h-100">
-                          <strong>💀 Estilo:</strong> sucio, oscuro y con acento naranja.
+                          <strong>Estilo:</strong> oscuro y con acento naranja.
                         </div>
                       </div>
                       <div className="col-md-6">
@@ -59,9 +60,9 @@ export default function HomePage() {
                     <div className="visual-frame">
                       <img src={heroImg} alt="Hero" />
                     </div>
-                    <div className="mt-3 text-center">
+                    {/* <div className="mt-3 text-center">
                       <span className="badge-grunge rounded-3 p-2">🎸 Listo para rockear</span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -73,8 +74,8 @@ export default function HomePage() {
         <section className="section">
           <div className="container">
             <div className="text-center mb-4">
-              <h2 className="grunge-title">Lo que trae esta landing</h2>
-              <p className="subtitle mb-0">Estructura tipo landing + look grunge en todo el sitio.</p>
+              <h2 className="grunge-title">Menú</h2>
+              <p className="subtitle mb-0">Abre cada producto para ver sus ingredientes</p>
             </div>
 
             <div className="row g-3">
@@ -82,21 +83,21 @@ export default function HomePage() {
                 <div className="feature-card">
                   <div className="feature-icon">📍</div>
                   <div className="feature-title">Rutas claras</div>
-                  <p className="feature-desc">Home (/), Login (/login) y Registro (/register).</p>
+                  <p className="feature-desc">---</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="feature-card">
                   <div className="feature-icon">🧨</div>
                   <div className="feature-title">UI con personalidad</div>
-                  <p className="feature-desc">Fondo grunge con grano + tarjetas con borde y sombra.</p>
+                  <p className="feature-desc">---</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="feature-card">
                   <div className="feature-icon">🛡️</div>
                   <div className="feature-title">Componentes reutilizables</div>
-                  <p className="feature-desc">Secciones consistentes usando clases nuevas en style.css.</p>
+                  <p className="feature-desc">---</p>
                 </div>
               </div>
             </div>
@@ -107,8 +108,8 @@ export default function HomePage() {
         <section className="section" style={{ paddingTop: 0 }}>
           <div className="container">
             <div className="text-center mb-4">
-              <h2 className="grunge-title">Cómo funciona</h2>
-              <p className="subtitle mb-0">Tres pasos y listo.</p>
+              <h2 className="grunge-title">Bebidas</h2>
+              <p className="subtitle mb-0">Refrescate o prueba nuestra especialidad</p>
             </div>
 
             <div className="steps">
@@ -147,15 +148,16 @@ export default function HomePage() {
               </div>
               <div className="col-lg-6">
                 <div className="card-grunge p-4 h-100">
-                  <h2 className="grunge-title">Beneficios</h2>
+                  <h2 className="grunge-title">Horarios de apertura:</h2>
                   <p className="subtitle">
-                    Una base sólida para que el diseño se sienta “landing” aunque sea una app simple.
+                    Te esperamos de Martes a Sábados de 3:00 PM a 10:00 PM.<br />
+                    ¡Ven a disfrutar de un buen café y rockear con nosotros!
                   </p>
                   <ul className="benefit-list">
-                    <li>Hero con CTA directo (Register/Login).</li>
-                    <li>Secciones organizadas con tarjetas.</li>
-                    <li>Estilo grunge unificado via `style.css`.</li>
-                    <li>Responsive con breakpoints simples.</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
                   </ul>
                   <div className="d-flex gap-3 flex-wrap mt-4">
                     <Link to="/register" className="btn btn-grunge px-4 py-2">
