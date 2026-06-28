@@ -1,11 +1,12 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink } from "react-router-dom";
 
 const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/nosotros', label: 'Sobre nosotros' },
-  { to: '/menu', label: 'Menú' },
-  { to: '/contactenos', label: 'contactanos' },
-]
+  { to: "/", label: "Inicio" },
+  { to: "/menu", label: "Menú" },
+  { to: "/nosotros", label: "Conócenos" },
+  { to: "/contactenos", label: "Ubicación" },
+  { to: "/redes", label: "Redes sociales" },
+];
 
 export default function NavBar() {
   return (
@@ -17,17 +18,13 @@ export default function NavBar() {
 
         <nav className="nav">
           {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) => (isActive ? 'active' : undefined)}
-            >
+            <NavLink key={link.to} to={link.to} className={({ isActive }) => (isActive ? "active" : undefined)} >
+              {" "}
               {link.label}
             </NavLink>
           ))}
         </nav>
       </div>
     </header>
-  )
+  );
 }
-
