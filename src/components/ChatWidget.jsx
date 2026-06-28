@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
 const DEFAULT_PHONE = '573153745515'
-const DEFAULT_PRESET_TEXT = 'Hola! soy ' + ' Quisiera...'
+const DEFAULT_PRESET_TEXT = 'Hola! soy ' + ', Quisiera...'
 
 export default function ChatWidget({
     phone = DEFAULT_PHONE,
