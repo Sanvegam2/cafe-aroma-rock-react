@@ -6,7 +6,7 @@
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   
-  /* --- Colores de acento (Cambiados a tonos café/dorado para hacer match con tu logo) --- */
+  /* --- Colores de acento  --- */
   --accent: #8B5A2B; /* Un tono café/madera rockero en vez del morado */
   --accent-bg: rgba(139, 90, 43, 0.1);
   --accent-border: rgba(139, 90, 43, 0.5);
@@ -14,10 +14,9 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  /* --- TIPOGRAFÍAS (Aquí es donde agregas la de tu logo) --- */
+  /* --- TIPOGRAFÍAS  --- */
   --sans: 'Montserrat', system-ui, 'Segoe UI', Roboto, sans-serif; /* Para párrafos */
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif; /* ¡LA FUENTE DE TU LOGO PARA LOS TÍTULOS! */
-  /* --heading: 'Alfa Slab One', serif; */
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -98,6 +97,11 @@ h2 {
     font-size: 20px;
   }
 }
+
+h3{
+margin-bottom:1rem;
+}
+
 p {
   margin: 0;
 }
