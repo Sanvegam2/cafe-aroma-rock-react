@@ -440,13 +440,23 @@ body {
 
 .instagram-media {
   min-width: stretch !important;
-  border-radius: 25px !important;
+  border-radius: 15px !important;
   height: 41.5rem !important;
   margin: 0 auto !important;
+  border: 2px solid black !important;
+
+}
+.rsme-tiktok-embed{
+  border-radius: 15px !important;
+  border: 2px solid black !important;
+  height: 41.5rem !important;
+
 }
 
 @media screen and (max-width: 768px) {
-  .instagram-media {
-    border-radius: 15px !important;
+  .instagram-media
+  .rsme-tiktok-embed {
+      height: 35.5rem !important;
+
   }
 }
