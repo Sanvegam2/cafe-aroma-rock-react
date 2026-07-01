@@ -450,3 +450,13 @@ body {
     border-radius: 15px !important;
   }
 }
+
+
+.visual-frame-about img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que rellene el círculo */
+  object-position: center; /* Centra la imagen */
+  display: block;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+}

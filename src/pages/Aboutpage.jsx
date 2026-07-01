@@ -1,4 +1,4 @@
-import heroImg from '../assets/hero.png'
+import aboutImage from '../assets/aboutImage.webp'
 import { Link } from 'react-router-dom'
 
 export default function aboutPage() {
@@ -24,8 +24,8 @@ export default function aboutPage() {
                   </div>
 
                   <div className="hero-visual">
-                    <div className="visual-frame">
-                      <img src={heroImg} alt="Hero" />
+                    <div className="visual-frame-about">
+                      <img src={aboutImage} alt="About Café Aroma Rock"/>
                     </div>
                     {/* <div className="mt-3 text-center">
                       <span className="badge-grunge rounded-3 p-2">🎸 Listo para rockear</span>
