@@ -19,7 +19,7 @@ export default function ChatWidget({
         <div className="chat-widget">
             <a className="chat-widget__button" href={href} target="_blank" rel="noreferrer" aria-label="Contactar por WhatsApp" title="WhatsApp" >
                 <span className="chat-widget__icon" aria-hidden="true">
-                    <FontAwesomeIcon icon={faWhatsapp} style={{ color: '#25d366', fontSize: 33 }} />
+                    <FontAwesomeIcon icon={faWhatsapp} style={{ color: '#25d366', fontSize: 40 }} />
                 </span>
             </a>
         </div>

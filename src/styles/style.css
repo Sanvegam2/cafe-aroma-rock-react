@@ -250,6 +250,19 @@ body {
   background: rgba(16, 16, 24, 0.55);
   padding: 18px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 183, 3, 0.45);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.35);
+}
+
+.feature-card:focus-visible {
+  outline: 2px solid var(--grunge-accent);
+  outline-offset: 2px;
 }
 
 .feature-icon {
@@ -280,6 +293,36 @@ body {
   margin: 0;
   line-height: 1.65;
 }
+
+.feature-modal-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid var(--grunge-border);
+  margin-bottom: 14px;
+}
+
+.feature-modal-desc {
+  margin: 0;
+  color: var(--grunge-muted);
+}
+
+.modal-grunge .modal-content {
+  background: linear-gradient(180deg, rgba(255, 183, 3, 0.16), transparent 55%), rgba(16, 16, 24, 0.96);
+  border: 1px solid var(--grunge-border);
+  color: var(--grunge-text);
+}
+
+.modal-grunge .modal-header,
+.modal-grunge .modal-footer {
+  border-color: var(--grunge-border);
+}
+
+.modal-grunge .btn-close {
+  filter: invert(1) grayscale(100%);
+}
+
 
 .steps {
   display: grid;
@@ -360,7 +403,7 @@ body {
    Contact Page
 ------------------------------ */
 .map-frame {
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */  /* descomentar si quieres bordes redondeados */
   border: 1px solid var(--grunge-border);
   overflow: hidden;
   background: rgba(255, 255, 255, 0.03);
@@ -396,7 +439,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #d3d3d3;
+  background: #ffffff;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.18);
   text-decoration: none;

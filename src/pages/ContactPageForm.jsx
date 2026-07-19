@@ -43,7 +43,7 @@ export default function ContactPage() {
           </div>
 
           <div className="row g-3 align-items-stretch">
-            {/* <div className="col-lg-6">
+            <div className="col-lg-6">
               <div className="contact-form-card card-grunge p-4 h-100">
                 <h3 className="grunge-title" style={{ fontSize: '1.6rem' }}>
                   Formulario PQRS
@@ -138,10 +138,9 @@ export default function ContactPage() {
                   </p>
                 </form>
               </div>
-            </div> */}
+            </div>
 
-            {/* <div className="col-lg-6"> */}
-            <div className="col-lg">
+            <div className="col-lg-6">
               <div className="card-grunge p-4 h-100">
                 <h3 className="grunge-title" style={{ fontSize: '1.6rem' }}>
                   Ubicación

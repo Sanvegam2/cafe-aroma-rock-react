@@ -1,7 +1,47 @@
 import heroImg from '../assets/hero.png'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+
+import espaciosEstacionCafe from '../assets/espacios/Estacion de cafe.webp'
+import espaciosVariedadCafe from '../assets/espacios/Variedad de café.webp'
+import espaciosProductosEstanterias from '../assets/espacios/Productos estanterias.webp'
+
+const featureCards = [
+  {
+    title: 'Café de especialidad',
+    description: 'Descubre nuestras mezclas con notas intensas de cacao, vainilla y fruta.',
+    icon: '☕',
+    image: espaciosEstacionCafe,
+  },
+  {
+    title: 'Ambiente rock',
+    description: 'Un espacio con música, iluminación cálida y decoración que invita a quedarse.',
+    icon: '🎸',
+    image: espaciosVariedadCafe,
+  },
+  {
+    title: 'Postres artesanales',
+    description: 'Complementa tu bebida con opciones dulces hechas a diario para compartir.',
+    icon: '🍰',
+    image: espaciosProductosEstanterias,
+  },
+]
 
 export default function HomePage() {
+  const [showModal, setShowModal] = useState(false)
+  const [selectedFeature, setSelectedFeature] = useState(null)
+
+  const handleOpenModal = (feature) => {
+    setSelectedFeature(feature)
+    setShowModal(true)
+  }
+
+  const handleCloseModal = () => {
+    setShowModal(false)
+    setSelectedFeature(null)
+  }
 
   return (
     <div className="page grunge">
@@ -68,30 +108,47 @@ export default function HomePage() {
             </div>
 
             <div className="row g-3">
-              <div className="col-md-4">
-                <div className="feature-card">
-                  <div className="feature-icon">📍</div>
-                  <div className="feature-title">Rutas claras</div>
-                  <p className="feature-desc">---</p>
+              {featureCards.map((feature) => (
+                <div className="col-md-4" key={feature.title}>
+                  <button
+                    type="button"
+                    className="feature-card w-100 text-start border-0"
+                    onClick={() => handleOpenModal(feature)}
+                  >
+                    <div className="feature-icon">{feature.icon}</div>
+                    <div className="feature-title">{feature.title}</div>
+                    <p className="feature-desc">{feature.description}</p>
+                  </button>
                 </div>
-              </div>
-              <div className="col-md-4">
-                <div className="feature-card">
-                  <div className="feature-icon">🧨</div>
-                  <div className="feature-title">UI con personalidad</div>
-                  <p className="feature-desc">---</p>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="feature-card">
-                  <div className="feature-icon">🛡️</div>
-                  <div className="feature-title">Componentes reutilizables</div>
-                  <p className="feature-desc">---</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
+
+        {/* Modales bootstrap */}
+
+        <Modal show={showModal} onHide={handleCloseModal} centered dialogClassName="modal-grunge">
+          <Modal.Header closeButton>
+            <Modal.Title>{selectedFeature?.title ?? 'Detalle'}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {selectedFeature?.image ? (
+              <img
+                src={selectedFeature.image}
+                alt={selectedFeature.title}
+                className="feature-modal-img"
+              />
+            ) : null}
+            <p className="feature-modal-desc mb-0">{selectedFeature?.description ?? ''}</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="outline-light" onClick={handleCloseModal}>
+              Cerrar
+            </Button>
+          </Modal.Footer>
+        </Modal>
+        
+        {/*  */}
 
         {/* HOW IT WORKS */}
         <section className="section" style={{ paddingTop: 0 }}>
@@ -191,4 +248,7 @@ export default function HomePage() {
     </div>
   )
 }
+
+// Seccion de modales
+
 
